@@ -1,0 +1,80 @@
+init_config:
+  mibs_folder: /mibs
+
+instances:
+
+  - ip_address: cisco-router-01-ip-address
+    community_string: read-only
+    tags:
+      - cisco-router-01
+
+    metrics:
+      - MIB: IF-MIB
+        table: ifXTable
+        symbols:
+          - ifHCInOctets
+          - ifHCOutOctets
+        metric_tags:
+          - tag: interface
+            column: ifAlias
+      - MIB: IF-MIB
+        table: ifTable
+        symbols:
+          - ifInErrors
+          - ifOutErrors
+          - ifInDiscards
+          - ifOutDiscards
+        metric_tags:
+          - tag: interface
+            column: ifDescr
+      - MIB: BGP4-MIB
+        table: bgpPeerTable
+        symbols:
+          - bgpPeerState
+        metric_tags:
+          - tag: neighbor
+            column: bgpPeerRemoteAddr
+      - OID: 1.3.6.1.4.1.9.9.91.1.1.1.1.4.1338
+        name: 10GTxPower
+      - OID: 1.3.6.1.4.1.9.9.91.1.1.1.1.4.1339
+        name: 10GRxPower
+      - OID: 1.3.6.1.4.1.9.9.91.1.1.1.1.4.1098
+        name: 1GTxPower
+      - OID: 1.3.6.1.4.1.9.9.91.1.1.1.1.4.1099
+        name: 1GRxPower
+
+  - ip_address: cisco-router-02-ip-address
+    community_string: read-only
+    tags:
+      - cisco-router-02
+
+    metrics:
+      - MIB: IF-MIB
+        table: ifXTable
+        symbols:
+          - ifHCInOctets
+          - ifHCOutOctets
+        metric_tags:
+          - tag: interface
+            column: ifAlias
+      - MIB: IF-MIB
+        table: ifTable
+        symbols:
+          - ifInErrors
+          - ifOutErrors
+          - ifInDiscards
+          - ifOutDiscards
+        metric_tags:
+          - tag: interface
+            column: ifDescr
+      - MIB: BGP4-MIB
+        table: bgpPeerTable
+        symbols:
+          - bgpPeerState
+        metric_tags:
+          - tag: neighbor
+            column: bgpPeerRemoteAddr
+      - OID: 1.3.6.1.4.1.9.9.91.1.1.1.1.4.1098
+        name: 1GTxPower
+      - OID: 1.3.6.1.4.1.9.9.91.1.1.1.1.4.1099
+        name: 1GRxPower
