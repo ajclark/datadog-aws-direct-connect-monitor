@@ -11,3 +11,10 @@ To get started, change the Hostname, IP Addresses and tag information in the `sn
 
 #### Run the Docker container from the built image
 `docker run -d --name dd-agent -e API_KEY=my-datadog-api-key-here dd-agent-image`
+
+### What the graphs look like in DataDog
+![alt tag](http://imgur.com/download/uVV1WEn)
+
+![alt tag](http://imgur.com/download/ffCvhEv)
+
+![alt tag](http://imgur.com/download/1A0x87x)
