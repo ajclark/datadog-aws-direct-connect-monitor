@@ -62,6 +62,8 @@ instances:
         metric_tags:
           - tag: interface
             column: ifAlias
+          - tag: name
+            column: ifName
       - MIB: IF-MIB
         table: ifTable
         symbols:
